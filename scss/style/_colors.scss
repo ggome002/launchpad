@@ -1,0 +1,23 @@
+//main:./_init.scss
+
+:root {
+  color-scheme: light dark;
+  //MATERIAL ICONS
+  --icon: rgba(0, 0, 0, 0.54);
+  --icon_inactive: rgba(0, 0, 0, 0.26);
+  // SHADOW COLOR
+  --box_shadow1: rgba(0, 0, 0, .10);
+  --box_shadow2: rgba(0, 0, 0, .12);
+  --box_shadow3: rgba(0, 0, 0, .16);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    //MATERIAL ICONS
+    --icon: rgba(255, 255, 255, 0.7);
+    --icon_inactive: rgba(255, 255, 255, 0.3);
+    // // SHADOW COLOR
+    --box_shadow1: rgba(0, 0, 0, .0);
+    --box_shadow2: rgba(0, 0, 0, .0);
+    --box_shadow3: rgba(0, 0, 0, .0);
+  }
+}
