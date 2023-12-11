@@ -1,0 +1,150 @@
+//main:../_mixins.scss
+@mixin material-checkbox() {
+  //
+  // Sample markup
+  //
+  // <label class="material-checkbox">
+  //   <input type="checkbox">
+  //   <span>Checkbox</span>
+  // </label>
+  //
+  //
+  --material_checkbox_text: var(--checkbox_font);
+  --material_checkbox_background: var(--checkbox_background);
+  --material_checkbox_border: var(--checkbox_border);
+  --material_checkbox_highlight: var(--system_Accent0);
+
+  .material-checkbox {
+    z-index: 0;
+    position: relative;
+    display: inline-block;
+    color: var(--material_checkbox_text);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  /* Input */
+  .material-checkbox > input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    z-index: -1;
+    position: absolute;
+    left: -10px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: var(--material_checkbox_background);
+    box-shadow: none;
+    outline: none;
+    opacity: 0;
+    // transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.1s;
+  }
+  /* Span */
+  .material-checkbox > span {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+  }
+  /* Box */
+  .material-checkbox > span::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 3px 11px 3px 1px;
+    border: solid 2px;
+    /* Safari */
+    border-color: var(--material_checkbox_border);
+    border-radius: 2px;
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    transition: border-color 0.1s, background-color 0.1s;
+  }
+  /* Checkmark */
+  .material-checkbox > span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 1px;
+    width: 10px;
+    height: 5px;
+    border: solid 2px transparent;
+    border-right: none;
+    border-top: none;
+    transform: translate(3px, 4px) rotate(-45deg);
+  }
+  /* Checked, Indeterminate */
+  .material-checkbox > input:checked,
+  .material-checkbox > input:focus,
+  .material-checkbox > input:indeterminate {
+    background-color: var(--material_checkbox_highlight);
+  }
+
+  .material-checkbox > input:checked + span::before,
+  .material-checkbox > input:indeterminate + span::before {
+    border-color: var(--material_checkbox_highlight);
+    background-color: var(--material_checkbox_highlight);
+  }
+
+  .material-checkbox > input:checked + span::after,
+  .material-checkbox > input:indeterminate + span::after {
+    border-color: var(--material_checkbox_background);
+  }
+
+  .material-checkbox > input:indeterminate + span::after {
+    border-left: none;
+    transform: translate(4px, 3px);
+  }
+  /* Hover, Focus */
+  .material-checkbox:hover > input {
+    opacity: 0.04;
+  }
+
+  .material-checkbox > input:focus {
+    opacity: 0.12;
+  }
+
+  .material-checkbox:hover > input:focus {
+    opacity: 0.16;
+  }
+  /* Active */
+  .material-checkbox > input:active {
+    opacity: 1;
+    // transform: scale(0);
+    transition: transform 0s, opacity 0s;
+  }
+
+  .material-checkbox > input:active + span::before {
+    border-color: var(--material_checkbox_border);
+  }
+
+  .material-checkbox > input:checked:active + span::before {
+    border-color: transparent;
+    background-color: var(--material_checkbox_background);
+  }
+  /* Disabled */
+  .material-checkbox > input:disabled {
+    opacity: 0;
+  }
+
+  .material-checkbox > input:disabled + span {
+    color: var(--material_checkbox_text);
+    cursor: initial;
+  }
+
+  .material-checkbox > input:disabled + span::before {
+    border-color: currentColor;
+  }
+
+  .material-checkbox > input:checked:disabled + span::before,
+  .material-checkbox > input:indeterminate:disabled + span::before {
+    border-color: transparent;
+    background-color: currentColor;
+  }
+}

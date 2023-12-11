@@ -1,0 +1,36 @@
+//main:../_mixins.scss
+@mixin DropShadow ($dp) {
+  @if $dp==0 {
+    filter: drop-shadow(0 0 0);
+  } @else 
+  if $dp==1 {
+    filter: drop-shadow(1px 1px 1px var(--box_shadow2));
+  } @else 
+  if $dp==2 {
+    filter: drop-shadow(2px 2px 2px var(--box_shadow2));
+  } @else 
+  if $dp==3 {
+    filter: drop-shadow(3px 4px 3px var(--box_shadow2));
+  } @else 
+  if $dp==4 {
+    filter: drop-shadow(4px 5px 4px var(--box_shadow2));
+  } @else 
+  if $dp==6 {
+    filter: drop-shadow(6px 10px 6px var(--box_shadow2));
+  } @else 
+  if $dp==8 {
+    filter: drop-shadow(8px 10px 8px var(--box_shadow2));
+  } @else 
+  if $dp==9 {
+    filter: drop-shadow(9px 12px 9px var(--box_shadow2));
+  } @else 
+  if $dp==12 {
+    filter: drop-shadow(12px 17px 12px var(--box_shadow2));
+  } @else 
+  if $dp==16 {
+    filter: drop-shadow(16px 24px 16px var(--box_shadow2));
+  } @else 
+  if $dp==24 {
+    filter: drop-shadow(24px 38px 24px var(--box_shadow2));
+  }
+}
