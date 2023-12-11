@@ -1,1 +1,13 @@
 @import "./style/_init.scss";
+
+html {
+    body {
+        main {
+            @import "./partials/about";
+            @import "./partials/calendar";
+            @import "./partials/catalog";
+            @import "./partials/favorite";
+            @import "./partials/status";
+        }
+    }
+}
