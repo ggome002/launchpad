@@ -3,12 +3,11 @@ section.favorite {
     div#subtext {
         padding-bottom: 30px;
     }
+
     div.containerApps {
         display: flex;
-        // gap: 2rem;
         flex-wrap: wrap;
         justify-content: space-between;
-        // grid-template-columns: repeat(3, 1fr);
         text-align: center;
 
         a {
@@ -17,18 +16,19 @@ section.favorite {
             border-radius: 10px;
             background-repeat: no-repeat;
             background-position: top 8px center;
-            background-size: 72px;  
+            background-size: 72px;
             flex-basis: calc(100% / 3);
             max-width: 100px;
             text-decoration: none;
             color: inherit;
             font-size: 0.8rem;
             font-weight: 300;
+            margin-bottom: 1rem;
 
-                        &:hover {
+            &:hover {
                 background-color: grey;
-                // transform: scale(1.1);
             }
+
             &#canvas {
                 background-image: url("../../images/canvas.png");
             }
@@ -55,135 +55,3 @@ section.favorite {
         }
     }
 }
-
-        // a {
-        //     display: relative;
-        //     color: white;
-        //     height: 100px;
-        //     width: 100px;
-        //     max-height: 140px;
-        //     max-width: 140px;
-        //     background-size: 60px;
-        //     background-position: center;
-        //     background-repeat: no-repeat;
-        //     border-radius: 10px;
-        //     // padding-top: 10px;
-        //     text-decoration: none;
-        //     position: relative;
-        //     &:hover {
-        //         background-color: grey;
-        //         transform: scale(1.1);
-        //     }
-        // }
-
-        // a#canvas {
-        //     background-image: url("../../images/canvas.png");
-        // }
-        // a#mail {
-        //     background-image: url("../../images/365.png");
-        // }
-        // a#zoom {
-        //     background-image: url("../../images/zoom.png");
-        // }
-        // a#myfiu {
-        //     background-image: url("../../images/myfiu.png");
-        // }
-        // a#linkedin {
-        //     background-image: url("../../images/linkedin.png");
-        // }
-        // a#askit {
-        //     background-image: url("../../images/askit.png");
-        // }
-        // span.text {
-        //     position: absolute;
-        //     bottom: 0;
-        //     right: 70%;
-        //     height: 1px;
-        //     width: 5px;
-        // }
-    //}
-
-    // div.containerApps {
-    //     display: grid;
-    //     grid-template-columns: repeat(3, 1fr);
-    //     max-width: 200px;
-    //     min-width: 150px;
-    //     gap: 20px;
-    //     padding: 20px;
-
-    //     span.app-icon {
-    //         color: #08133f;
-    //         display: flex;
-    //         flex-direction: column;
-    //         align-items: center;
-    //         transition: background-color 0.3s ease-in-out;
-    //         max-width: 120px;
-    //         max-height: 100px;
-    //         border-radius: 10px;
-    //         justify-content: center;
-    //         // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    //         @include BoxShadow (3);
-
-    //         &:hover {
-    //             background-color: grey;
-    //             /* background-color: #d5d5d5; */
-    //             transform: scale(1.1);
-    //         }
-
-    //         img {
-    //             width: 60px;
-    //             height: 60px;
-    //             aspect-ratio: 1/1;
-    //             mix-blend-mode: darken;
-    //             // isolation: isolate;
-    //         }
-
-    //         h3.app-text {
-    //             font-size: 10px;
-    //         }
-
-    //     }
-    // }
-
-//}
-
-//aspect ratio for images
-//mixblendmode
-
-/* section.favorite{
-        background: white;
- }
-    h3.app-text {
-        text-align: center;
-        font-size: smaller;
-    }
-    div.containerApps{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            max-width: 200px;
-            min-width: 150px;   
-            gap: 10px;
-    }
-        span.app-icon {
-            color: #08133f;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: background-color 0.3s ease-in-out;
-            max-width: 120px;
-            max-height: 120px;
-            padding: 20px;
-            border-radius: 10px;
-            justify-content: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        span.app-icon:hover {
-            background-color: grey;
-            transform: scale(1.1);
-        }
-        
-        span.app-icon img {
-            width: 100%;
-            height: 100%;
-        } */
