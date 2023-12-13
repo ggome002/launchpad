@@ -15,13 +15,13 @@ html {
 
 html {
     body {
-        padding: 3rem 3.8rem;
         background-image: url("/images/52545243399_fbc8063594_6k.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         backdrop-filter: blur(3rem);
         -webkit-backdrop-filter: blur(3rem);
+
         &::after {
             content: "";
             position: absolute;
@@ -32,18 +32,15 @@ html {
             background: rgba(0, 0, 0, 0.6);
             z-index: -1;
         }
+
         main {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(5, 1fr);
-            grid-column-gap: 2.8rem;
-            grid-row-gap: 2.8rem;
             height: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
+            overflow: scroll;
+            padding: 2rem 1.8rem;
 
             section {
                 color: var(--main_color, rgba(255, 255, 255, 0.9));
+                margin: 0 0 4rem;
 
                 a.link_chevron {
                     display: inline-block;
@@ -67,6 +64,7 @@ html {
                         margin: 0 0 0.2rem;
                     }
                 }
+
                 span {
                     font-weight: 100;
                     font-size: 0.85rem;
@@ -83,24 +81,29 @@ html {
                     border-radius: 0.5rem;
                     padding: 1.2rem 1rem;
                     margin: 1rem 0;
-                    height: 100%;
+                    height: calc(100% - 56px);
+
                 }
             }
 
             section.about {
-                grid-area: 1 / 1 / 4 / 2;
+                grid-area: about;
             }
+
             section.favorite {
-                grid-area: 1 / 2 / 4 / 3;
+                grid-area: favorite;
             }
+
             section.status {
-                grid-area: 1 / 3 / 4 / 4;
+                grid-area: status;
             }
+
             section.catalog {
-                grid-area: 4 / 1 / 6 / 3;
+                grid-area: catalog;
             }
+
             section.calendar {
-                grid-area: 4 / 3 / 6 / 4;
+                grid-area: calendar;
             }
 
             @import "./partials/about";
@@ -108,6 +111,40 @@ html {
             @import "./partials/catalog";
             @import "./partials/favorite";
             @import "./partials/status";
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    html {
+        body {
+            main {
+                display: grid;
+                grid-template-areas: "about favorite""status calendar""catalog catalog ";
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                grid-column-gap: 2.8rem;
+                grid-row-gap: 2.8rem;
+
+                section {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    html {
+        body {
+
+            main {
+                grid-template-areas: "about favorite status""catalog catalog calendar";
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                max-width: 1280px;
+                margin: 0 auto;
+            }
         }
     }
 }

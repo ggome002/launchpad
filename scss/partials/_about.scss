@@ -19,6 +19,7 @@ section.about {
                 h2 {
                     margin-bottom: 0.2rem;
                 }
+
                 span {
                     font-size: 0.8rem;
                 }
@@ -82,9 +83,11 @@ section.about {
                         &[data-app="canvas"] {
                             background: url("/images/canvas.png");
                         }
+
                         &[data-app="office365"] {
                             background: url("/images/office365.png");
                         }
+
                         &[data-app="myfiu"] {
                             background: url("/images/fiu.png");
                         }
@@ -100,22 +103,26 @@ section.about {
                     display: flex;
                     flex-wrap: nowrap;
                     padding: 1rem 0 2rem;
-                    width: 100%;
+                    // width: 100%;
 
                     span {
                         height: 0.2rem;
                         position: relative;
+
                         &::after {
                             content: attr(data-label);
                             position: absolute;
                             top: 0.6rem;
                         }
+
                         &:nth-child(1) {
                             background: #eb6062;
                         }
+
                         &:nth-child(2) {
                             background: #ecce21;
                         }
+
                         &:nth-child(3) {
                             background: #23864d;
                         }
