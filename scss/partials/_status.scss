@@ -1,5 +1,82 @@
 //main:../main.scss
 
-section.status{
-    // background: red;
+section.status {
+    div.card {
+        display: flex;
+        flex-direction: column;
+        // background: red;
+        font-size: 0.8rem;
+        font-weight: 300;
+        color: inherit;
+
+        span.outages {
+            background: var(--main_color_red_lighter, #eb606240);
+            // background-color: rgba(255, 0, 0, 0.2);
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+            padding: 2.5%;
+            border-left: 5%;
+            border-color: var(--main_color_red, #eb6062);
+            // border-color: red;
+            border-width: 0.5rem;
+            // border: ;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 0;
+            border-style: solid;
+
+            ul.list {
+                font-weight: 300;
+                list-style: none;
+
+                li#dateOutages {
+                    font-weight: 150;
+                    font-size: smaller;
+                }
+
+                li#contentOutages {
+                    font-weight: 150;
+                    margin-top: 1vh;
+                    font-size: small;
+                }
+            }
+
+        }
+
+        span.alerts {
+            // background-color: rgba(255, 153, 0, 0.3);
+            background: var(--main_color_yellow_lighter, #ecce2140);
+            padding: 2.5%;
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+            border-left: 5%;
+            // border-color: orange;
+            border-color: var(--main_color_yellow, #ecce21);
+            border-width: 0.5rem;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 0;
+            border-style: solid;
+
+            ul.list {
+                font-weight: 300;
+                list-style: none;
+
+                li#dateAlerts {
+                    font-weight: 150;
+                    font-size: smaller;
+                }
+
+                li#contentAlerts {
+                    font-weight: 150;
+                    margin-top: 1vh;
+                    font-size: small;
+
+                }
+            }
+        }
+
+
+    }
+
 }
