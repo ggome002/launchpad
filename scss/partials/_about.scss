@@ -116,15 +116,15 @@ section.about {
                         }
 
                         &:nth-child(1) {
-                            background: #eb6062;
+                            background: var(--main_color_red, #eb6062);
                         }
 
                         &:nth-child(2) {
-                            background: #ecce21;
+                            background: var(--main_color_yellow, #ecce21);
                         }
 
                         &:nth-child(3) {
-                            background: #23864d;
+                            background: var(--main_color_green, #23864d);
                         }
                     }
                 }
