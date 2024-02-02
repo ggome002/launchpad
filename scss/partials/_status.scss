@@ -2,6 +2,7 @@
 
 section.status {
     div.card {
+        overflow-y: scroll;
         display: flex;
         flex-direction: column;
         // background: red;
