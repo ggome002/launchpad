@@ -1,84 +1,99 @@
 //main:../main.scss
 
-section.calendar{
+section.calendar {
     font-size: 0.8rem;
     font-weight: 300;
     color: inherit;
 
     div.card {
-    overflow-y:scroll; 
-    // height:300px;
+        overflow-y: scroll;
+
+        // height:300px;
+        div.calSection {
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
     }
+
     #subheader {
         width: 14rem;
         display: inline;
         height: 16px;
     }
-        div#header {
-            display: flex;
-            align-items: baseline;
-            justify-content: end;
-            width: 2rem;
-            height: 16px;
-            float: right;
-        }
 
-            .dropdown {
-            position: relative;
-            // width: 2rem;
-            // height: 16px;
-            }
+    div#header {
+        display: flex;
+        align-items: baseline;
+        justify-content: end;
+        width: 2rem;
+        height: 16px;
+        float: right;
+    }
 
-                .material-symbols-outlined {
-                    font-size: inherit;
-                    cursor: pointer;
-                    padding: 0;
-                }
+    .dropdown {
+        position: relative;
+        // width: 2rem;
+        // height: 16px;
+    }
 
-                // .dropdown.active > .link, .link:hover {
-                //     color: black;
-                // }
+    .material-symbols-outlined {
+        font-size: inherit;
+        cursor: pointer;
+        padding: 0;
+    }
 
-                .dropdown-menu {
-                    position: absolute;
-                    left: 0;
-                    top: calc(100% + .25rem);
-                    width: 7rem;
-                    background-color: grey;
-                    padding: .75rem;
-                    border-radius: .25rem;
-                    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .1);
-                    opacity: 0;
-                    pointer-events: auto;
-                    transform: translate(-6rem);
-                    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;                
-                }
+    // .dropdown.active > .link, .link:hover {
+    //     color: black;
+    // }
 
-                .dropdown.active > .material-symbols-outlined + .dropdown-menu {
-                    opacity: 1;
-                    transform: translateY(-5,-5);
-                    pointer-events: auto;
-                }
+    .dropdown-menu {
+        position: absolute;
+        left: 0;
+        top: calc(100% + .25rem);
+        width: 7rem;
+        background-color: grey;
+        padding: .75rem;
+        border-radius: .25rem;
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .1);
+        opacity: 0;
+        pointer-events: auto;
+        transform: translate(-6rem);
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    }
 
-                span.changeableContent:hover {
-                    cursor: pointer;
-                }
-                span.changeableContent:active {
-                    color: white;
-                    cursor: pointer;    
-                }
-                h4 {
-                    border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
-                    padding: 0 0 1rem;
-                    margin-bottom: 1rem;
-                }
-                #textContent {
-                    font-size: small;
-                    border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
-                    padding: 0 0 1rem;
-                    margin-bottom: 1rem;
-                }
-                p {
-                    padding: 0 0 1rem;
-                }
-            }
+    .dropdown.active>.material-symbols-outlined+.dropdown-menu {
+        opacity: 1;
+        transform: translateY(-5, -5);
+        pointer-events: auto;
+    }
+
+    span.changeableContent:hover {
+        cursor: pointer;
+    }
+
+    span.changeableContent:active {
+        color: white;
+        cursor: pointer;
+    }
+
+    h4 {
+        border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
+        padding: 0 0 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #textContent {
+        font-size: small;
+        border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
+        padding: 0 0 1rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        padding: 0 0 1rem;
+    }
+
+}

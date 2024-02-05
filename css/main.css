@@ -638,6 +638,12 @@ html body main section.calendar {
 html body main section.calendar div.card {
   overflow-y: scroll;
 }
+html body main section.calendar div.card div.calSection {
+  display: none;
+}
+html body main section.calendar div.card div.calSection.show {
+  display: block;
+}
 html body main section.calendar #subheader {
   width: 14rem;
   display: inline;
