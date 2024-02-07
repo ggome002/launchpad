@@ -3,7 +3,7 @@
 section.calendar {
     font-size: 0.8rem;
     font-weight: 300;
-    color: inherit;
+    // color: inherit;
 
     div.card {
         overflow-y: scroll;
@@ -44,10 +44,6 @@ section.calendar {
         cursor: pointer;
         padding: 0;
     }
-
-    // .dropdown.active > .link, .link:hover {
-    //     color: black;
-    // }
 
     .dropdown-menu {
         position: absolute;

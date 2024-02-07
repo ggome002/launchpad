@@ -633,7 +633,6 @@ html body main section.about div.card ul li div[stacked_graph] span:nth-child(3)
 html body main section.calendar {
   font-size: 0.8rem;
   font-weight: 300;
-  color: inherit;
 }
 html body main section.calendar div.card {
   overflow-y: scroll;
@@ -764,7 +763,6 @@ html body main section.status div.card {
   flex-direction: column;
   font-size: 0.8rem;
   font-weight: 300;
-  color: inherit;
 }
 html body main section.status div.card span.outages {
   background: var(--main_color_red_lighter, rgba(235, 96, 98, 0.2509803922));
