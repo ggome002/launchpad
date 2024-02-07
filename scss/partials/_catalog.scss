@@ -90,7 +90,27 @@ section.catalog {
 
         article {
             div {
-                &.list {}
+                &.list {
+                    overflow-y: scroll;
+                    max-height: 300px;
+
+                    span {
+                        margin: 10px 0;
+                        padding: 5px 20px;
+
+                        &:first-of-type {
+                            margin-top: 0;
+                        }
+
+                        &.heading {
+                            padding-left: 10px;
+                            background: var(--main_border, rgba(255, 255, 255, 0.6));
+                            position: sticky;
+                            top: 0px;
+
+                        }
+                    }
+                }
 
                 &[filter] {
                     span {
