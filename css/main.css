@@ -447,7 +447,7 @@ template {
 
 body,
 html {
-  height: 100vh;
+  height: 100dvh;
 }
 
 html body {
@@ -457,6 +457,7 @@ html body {
   background-size: cover;
   backdrop-filter: blur(3rem);
   -webkit-backdrop-filter: blur(3rem);
+  overflow: hidden;
 }
 html body::after {
   content: "";
@@ -469,9 +470,9 @@ html body::after {
   z-index: -1;
 }
 html body main {
-  height: 100%;
-  overflow: scroll;
+  max-height: 100dvh;
   padding: 2rem 1.8rem;
+  overflow: scroll;
 }
 html body main section {
   color: var(--main_color, rgba(255, 255, 255, 0.9));
@@ -770,6 +771,319 @@ html body main section.calendar div.card div div.extra-information a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+html body main section.catalog div.card header {
+  border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
+  padding-bottom: 1rem;
+}
+html body main section.catalog div.card header form {
+  --material_textfield_text: var(--textfield_font);
+  --material_textfield_placeholder: var(--textfield_placeholder);
+  --material_textfield_border: var(--textfield_border);
+  --material_textfield_background: var(--textfield_background);
+  --material_textfield_highlight: var(--system_Accent0);
+  /* Input, Textarea */
+  /* Span */
+  /* Corners */
+  /* Hover */
+  /* Span on input data */
+  /* Placeholder-shown */
+  /* Focus */
+  /* Disabled */
+  /* Faster transition in Safari for less noticable fractional font-size issue */
+  padding-bottom: 1rem;
+}
+html body main section.catalog div.card header form .material-textfield-outlined {
+  position: relative;
+  display: inline-block;
+  padding-top: 6px;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea {
+  box-sizing: border-box;
+  margin: 0;
+  border: solid 1px;
+  /* Safari */
+  border-color: var(--material_textfield_border);
+  border-top-color: transparent;
+  border-radius: 4px;
+  padding: 15px 13px;
+  width: 100%;
+  height: inherit;
+  color: var(--material_textfield_text);
+  background-color: transparent;
+  box-shadow: none;
+  /* Firefox */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  caret-color: var(--material_textfield_highlight);
+  transition: border 0.2s, box-shadow 0.2s;
+  background-color: var(--material_textfield_background);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input + span,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea + span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  border-color: var(--material_textfield_border);
+  width: 100%;
+  max-height: 100%;
+  color: var(--material_textfield_placeholder);
+  font-size: 75%;
+  line-height: 15px;
+  cursor: text;
+  transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > input + span::before,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea + span::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  margin-top: 6px;
+  border-top: solid 1px;
+  border-top-color: var(--material_textfield_border);
+  min-width: 10px;
+  height: 8px;
+  pointer-events: none;
+  box-shadow: inset 0 1px transparent;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input + span::before,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea + span::before {
+  margin-right: 4px;
+  border-left: solid 1px transparent;
+  border-radius: 4px 0;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea + span::after {
+  flex-grow: 1;
+  margin-left: 4px;
+  border-right: solid 1px transparent;
+  border-radius: 0 4px;
+}
+html body main section.catalog div.card header form .material-textfield-outlined:hover > input,
+html body main section.catalog div.card header form .material-textfield-outlined:hover > textarea {
+  border-color: var(--material_textfield_border);
+  border-top-color: transparent;
+}
+html body main section.catalog div.card header form .material-textfield-outlined:hover > input + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined:hover > input + span::before,
+html body main section.catalog div.card header form .material-textfield-outlined:hover > textarea + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined:hover > textarea + span::before {
+  border-top-color: var(--material_textfield_border);
+}
+html body main section.catalog div.card header form .material-textfield-outlined:hover > input:not(:focus):-moz-placeholder-shown, html body main section.catalog div.card header form .material-textfield-outlined:hover > textarea:not(:focus):-moz-placeholder-shown {
+  border-color: var(--material_textfield_border);
+}
+html body main section.catalog div.card header form .material-textfield-outlined:hover > input:not(:focus):placeholder-shown,
+html body main section.catalog div.card header form .material-textfield-outlined:hover > textarea:not(:focus):placeholder-shown {
+  border-color: var(--material_textfield_border);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:not(:-moz-placeholder-shown) + span, html body main section.catalog div.card header form .material-textfield-outlined > textarea:not(:-moz-placeholder-shown) + span {
+  color: var(--material_textfield_text);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:not(:placeholder-shown) + span,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:not(:placeholder-shown) + span {
+  color: var(--material_textfield_text);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:not(:focus):-moz-placeholder-shown, html body main section.catalog div.card header form .material-textfield-outlined > textarea:not(:focus):-moz-placeholder-shown {
+  border-top-color: var(--material_textfield_placeholder);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:not(:focus):placeholder-shown,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:not(:focus):placeholder-shown {
+  border-top-color: var(--material_textfield_placeholder);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:not(:focus):-moz-placeholder-shown + span, html body main section.catalog div.card header form .material-textfield-outlined > textarea:not(:focus):-moz-placeholder-shown + span {
+  font-size: inherit;
+  line-height: 68px;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:not(:focus):placeholder-shown + span,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:not(:focus):placeholder-shown + span {
+  font-size: inherit;
+  line-height: 68px;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:not(:focus):-moz-placeholder-shown + span::after, html body main section.catalog div.card header form .material-textfield-outlined > input:not(:focus):-moz-placeholder-shown + span::before, html body main section.catalog div.card header form .material-textfield-outlined > textarea:not(:focus):-moz-placeholder-shown + span::after, html body main section.catalog div.card header form .material-textfield-outlined > textarea:not(:focus):-moz-placeholder-shown + span::before {
+  border-top-color: transparent;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:not(:focus):placeholder-shown + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > input:not(:focus):placeholder-shown + span::before,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:not(:focus):placeholder-shown + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:not(:focus):placeholder-shown + span::before {
+  border-top-color: transparent;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:focus,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:focus {
+  border-color: var(--material_textfield_highlight);
+  border-top-color: transparent;
+  box-shadow: inset 1px 0 var(--material_textfield_highlight), inset -1px 0 var(--material_textfield_highlight), inset 0 -1px var(--material_textfield_highlight);
+  outline: none;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:focus + span,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:focus + span {
+  color: var(--material_textfield_highlight);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:focus + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > input:focus + span::before,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:focus + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:focus + span::before {
+  border-top-color: var(--material_textfield_highlight);
+  box-shadow: inset 0 1px var(--material_textfield_highlight);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:disabled,
+html body main section.catalog div.card header form .material-textfield-outlined > input:disabled + span,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled + span {
+  border-color: var(--material_textfield_placeholder);
+  border-top-color: transparent;
+  color: var(--material_textfield_placeholder);
+  pointer-events: none;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:disabled + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > input:disabled + span::before,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled + span::before {
+  border-top-color: var(--material_textfield_placeholder);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:disabled:-moz-placeholder-shown, html body main section.catalog div.card header form .material-textfield-outlined > input:disabled:-moz-placeholder-shown + span, html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled:-moz-placeholder-shown, html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled:-moz-placeholder-shown + span {
+  border-top-color: var(--material_textfield_placeholder);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:disabled:placeholder-shown,
+html body main section.catalog div.card header form .material-textfield-outlined > input:disabled:placeholder-shown + span,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled:placeholder-shown,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled:placeholder-shown + span {
+  border-top-color: var(--material_textfield_placeholder);
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:disabled:-moz-placeholder-shown + span::after, html body main section.catalog div.card header form .material-textfield-outlined > input:disabled:-moz-placeholder-shown + span::before, html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled:-moz-placeholder-shown + span::after, html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled:-moz-placeholder-shown + span::before {
+  border-top-color: transparent;
+}
+html body main section.catalog div.card header form .material-textfield-outlined > input:disabled:placeholder-shown + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > input:disabled:placeholder-shown + span::before,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled:placeholder-shown + span::after,
+html body main section.catalog div.card header form .material-textfield-outlined > textarea:disabled:placeholder-shown + span::before {
+  border-top-color: transparent;
+}
+@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    html body main section.catalog div.card header form .material-textfield-outlined > input,
+    html body main section.catalog div.card header form .material-textfield-outlined > input + span,
+    html body main section.catalog div.card header form .material-textfield-outlined > input + span::after,
+    html body main section.catalog div.card header form .material-textfield-outlined > input + span::before,
+    html body main section.catalog div.card header form .material-textfield-outlined > textarea,
+    html body main section.catalog div.card header form .material-textfield-outlined > textarea + span,
+    html body main section.catalog div.card header form .material-textfield-outlined > textarea + span::after,
+    html body main section.catalog div.card header form .material-textfield-outlined > textarea + span::before {
+      transition-duration: 0.1s;
+    }
+  }
+}
+html body main section.catalog div.card header form label {
+  position: relative;
+}
+html body main section.catalog div.card header form label input {
+  padding: 0.4rem 0.6rem 0.6rem 2.4rem;
+  background: transparent;
+  border: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
+  border-radius: 0.4rem;
+  color: inherit;
+  font-weight: 100;
+  outline: none;
+  width: 100%;
+}
+html body main section.catalog div.card header form label input::-moz-placeholder {
+  color: var(--main_border, rgba(255, 255, 255, 0.2));
+}
+html body main section.catalog div.card header form label input::placeholder {
+  color: var(--main_border, rgba(255, 255, 255, 0.2));
+}
+html body main section.catalog div.card header form label i {
+  color: var(--main_border, rgba(255, 255, 255, 0.6));
+  font-weight: 300;
+  position: absolute;
+  top: 50%;
+  left: 0.4rem;
+  transform: translate(0, -50%);
+}
+html body main section.catalog div.card header div[filter] {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 0.2rem;
+}
+html body main section.catalog div.card header div[filter] span[data-icon] {
+  min-width: 60px;
+  padding: 0.6rem 0.4rem 0.6rem 1.8rem;
+  background-position: left 0.6rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1.6rem !important;
+  border: 0.1rem solid transparent;
+  position: relative;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+html body main section.catalog div.card header div[filter] span[data-icon]::before {
+  content: attr(data-icon);
+  font-family: "Material Symbols Outlined";
+  font-size: 1.4rem;
+  font-weight: 100;
+  position: absolute;
+  left: 0.2rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  border: 0.1rem solid transparent;
+}
+html body main section.catalog div.card header div[filter] span[data-icon]:hover {
+  border: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
+  border-radius: 0.25rem;
+}
+html body main section.catalog div.card header div[filter] span[data-icon][active] {
+  border: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.6));
+  background: var(--main_border, rgba(255, 255, 255, 0.6));
+  border-radius: 0.25rem;
+}
+html body main section.catalog div.card article div.list {
+  overflow-y: scroll;
+  max-height: 300px;
+}
+html body main section.catalog div.card article div.list span {
+  margin: 10px 0;
+  padding: 5px 20px;
+}
+html body main section.catalog div.card article div.list span:first-of-type {
+  margin-top: 0;
+}
+html body main section.catalog div.card article div.list span.heading {
+  padding-left: 10px;
+  background: var(--main_border, rgba(255, 255, 255, 0.6));
+  position: sticky;
+  top: 0px;
+}
+html body main section.catalog div.card article div[filter] span {
+  font-size: 0.6rem;
+  text-align: center;
+}
+@media only screen and (min-width: 800px) {
+  html body main section.catalog div.card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  html body main section.catalog div.card header form {
+    flex: 1;
+    padding: 0;
+  }
+  html body main section.catalog div.card header div[filter] {
+    gap: 0.8rem;
+  }
+}
 html body main section.favorite div#subtext {
   padding-bottom: 30px;
 }
@@ -829,7 +1143,6 @@ html body main section.status div.card {
   flex-direction: column;
   font-size: 0.8rem;
   font-weight: 300;
-  color: inherit;
 }
 html body main section.status div.card span.outages {
   background: var(--main_color_red_lighter, rgba(235, 96, 98, 0.2509803922));
