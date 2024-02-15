@@ -631,9 +631,68 @@ html body main section.about div.card ul li div[stacked_graph] span:nth-child(3)
   background: var(--main_color_green, #23864d);
 }
 html body main section.calendar {
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: inherit;
+  position: relative;
+}
+html body main section.calendar span[data-icon] {
+  max-width: 6rem;
+  padding: 0.6rem 0.4rem 0.6rem 1.8rem;
+  background-position: left 0.6rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1.6rem !important;
+  border: 0.1rem solid transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+html body main section.calendar span[data-icon]::before {
+  content: attr(data-icon);
+  font-family: "Material Symbols Outlined";
+  font-size: 1.4rem;
+  font-weight: 100;
+  position: absolute;
+  left: 0.2rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  border: 0.1rem solid transparent;
+}
+html body main section.calendar span[data-icon]:hover {
+  border: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
+  border-radius: 0.25rem;
+}
+html body main section.calendar span[data-icon][active] {
+  border: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.6));
+  background: var(--main_border, rgba(255, 255, 255, 0.6));
+  border-radius: 0.25rem;
+}
+html body main section.calendar .dropdown-menu {
+  display: none;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  right: 0;
+  top: 2.5rem;
+  position: absolute;
+  z-index: 1;
+}
+html body main section.calendar .dropdown-menu span {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+html body main section.calendar .dropdown-menu span:hover {
+  background-color: #ddd;
+}
+html body main section.calendar .dropdown-menu span.changeableContent:hover {
+  cursor: pointer;
+}
+html body main section.calendar .dropdown-menu span.changeableContent:active {
+  color: white;
+  cursor: pointer;
+}
+html body main section.calendar .show {
+  display: block;
 }
 html body main section.calendar div.card {
   overflow-y: scroll;
@@ -644,66 +703,72 @@ html body main section.calendar div.card div.calSection {
 html body main section.calendar div.card div.calSection.show {
   display: block;
 }
-html body main section.calendar #subheader {
-  width: 14rem;
-  display: inline;
-  height: 16px;
+html body main section.calendar div.card h4 {
+  border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
+  padding: 0 0 1rem;
+  font-weight: 300;
+  font-size: 1rem;
 }
-html body main section.calendar div#header {
-  display: flex;
-  align-items: baseline;
-  justify-content: end;
-  width: 2rem;
-  height: 16px;
-  float: right;
+html body main section.calendar div.card h4:nth-child(1) {
+  margin-bottom: 2rem;
 }
-html body main section.calendar .dropdown {
-  position: relative;
-}
-html body main section.calendar .material-symbols-outlined {
-  font-size: inherit;
-  cursor: pointer;
-  padding: 0;
-}
-html body main section.calendar .dropdown-menu {
+html body main section.calendar div.card a.readmore {
+  font-weight: 100;
+  font-size: 0.85rem;
+  right: 2rem;
   position: absolute;
-  left: 0;
-  top: calc(100% + 0.25rem);
-  width: 7rem;
-  background-color: grey;
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: auto;
-  transform: translate(-6rem);
-  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  margin-top: 0.35rem;
 }
-html body main section.calendar .dropdown.active > .material-symbols-outlined + .dropdown-menu {
-  opacity: 1;
-  transform: translateY(-5, -5);
-  pointer-events: auto;
+html body main section.calendar div.card a.readmore:visited {
+  color: #f1f1f1;
 }
-html body main section.calendar span.changeableContent:hover {
-  cursor: pointer;
+html body main section.calendar div.card div h5 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  font-size: 1rem;
 }
-html body main section.calendar span.changeableContent:active {
-  color: white;
-  cursor: pointer;
+html body main section.calendar div.card div p {
+  font-size: 0.85rem;
+  font-weight: 100;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
-html body main section.calendar h4 {
-  border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
+html body main section.calendar div.card div p:last-child {
+  margin-bottom: 0.5rem;
   padding: 0 0 1rem;
-  margin-bottom: 1rem;
 }
-html body main section.calendar #textContent {
-  font-size: small;
-  border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
-  padding: 0 0 1rem;
-  margin-bottom: 1rem;
+html body main section.calendar div.card div div:last-child > p:last-child {
+  border-bottom: 0;
 }
-html body main section.calendar p {
-  padding: 0 0 1rem;
+html body main section.calendar div.card div div.extra-information {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.2rem;
+  margin-top: 2rem;
+  grid-auto-rows: minmax(1rem, auto);
+  width: 12.5rem;
+}
+html body main section.calendar div.card div div.extra-information span.material-symbols-outlined {
+  display: block;
+  position: relative;
+  transform: translateY(-0.4rem);
+}
+html body main section.calendar div.card div div.extra-information span.material-symbols-outlined:nth-child(5), html body main section.calendar div.card div div.extra-information span.material-symbols-outlined:nth-child(3) {
+  margin-left: 1rem;
+}
+html body main section.calendar div.card div div.extra-information a {
+  font-weight: 100;
+  font-size: 0.85rem;
+  min-width: 5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 html body main section.favorite div#subtext {
   padding-bottom: 30px;
