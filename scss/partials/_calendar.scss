@@ -1,95 +1,153 @@
 //main:../main.scss
 
 section.calendar {
-    font-size: 0.8rem;
-    font-weight: 300;
-    // color: inherit;
+            position: relative;
+
+            span[data-icon] {
+                max-width: 6rem;
+                padding: 0.6rem 0.4rem 0.6rem 1.8rem;
+                background-position: left 0.6rem center !important;
+                background-repeat: no-repeat !important;
+                background-size: 1.6rem !important;
+                border: 0.1rem solid transparent;
+                position: absolute;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+
+                &::before {
+                    content: attr(data-icon);
+                    font-family: "Material Symbols Outlined";
+                    font-size: 1.4rem;
+                    font-weight: 100;
+                    position: absolute;
+                    left: .2rem;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    border: 0.1rem solid transparent;
+                }
+
+                &:hover {
+                    border: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
+                    border-radius: 0.25rem;
+                }
+
+                &[active] {
+                    border: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.6));
+                    background: var(--main_border, rgba(255, 255, 255, 0.6));
+                    border-radius: 0.25rem;
+
+                }
+            }
+            .dropdown-menu {
+                display: none;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                right: 0;
+                top: 2.5rem;
+                position: absolute;
+                z-index: 1;
+                span {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+                span:hover {
+                    background-color: #ddd;
+                }
+                span.changeableContent:hover {
+                    cursor: pointer;
+                }
+                span.changeableContent:active {
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+            .show {
+                display:block; 
+            }
 
     div.card {
         overflow-y: scroll;
-
-        // height:300px;
         div.calSection {
             display: none;
-
             &.show {
                 display: block;
             }
         }
-    }
+        h4 {
+            border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
+            padding: 0 0 1rem;
+            font-weight: 300;
+            font-size: 1rem;
+        }
+        h4:nth-child(1) {
+            margin-bottom: 2rem;
+        }
+        a.readmore {
+            font-weight: 100;
+            font-size: 0.85rem;
+            right: 2rem;
+            position: absolute;
+            margin-top: 0.35rem;
+        }
+        a.readmore:visited {
+            color: #f1f1f1;
+        }
 
-    #subheader {
-        width: 14rem;
-        display: inline;
-        height: 16px;
+        div {
+            h5 {
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+                font-weight: 300;
+                font-size: 1rem;
+            }
+            p {
+                font-size: 0.85rem;
+                font-weight: 100;
+                margin-top: 0.5rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+            p:last-child {
+                margin-bottom: 0.5rem;
+                padding: 0 0 1rem;
+        
+            }
+            div:last-child > p:last-child {
+                border-bottom: 0;
+            }
+            div.extra-information {
+                margin-top: 1rem;
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 0.2rem;
+                margin-top: 2rem;
+                grid-auto-rows: minmax(1rem, auto);
+                width: 12.5rem;
+                
+                span.material-symbols-outlined {
+                    display: block;
+                    position: relative;
+                    transform: translateY(-0.4rem);
+                }
+                span.material-symbols-outlined:nth-child(5),  span.material-symbols-outlined:nth-child(3){
+                    margin-left: 1rem;
+                }
+                a {
+                    font-weight: 100;
+                    font-size: 0.85rem;
+                    min-width: 5rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
     }
-
-    div#header {
-        display: flex;
-        align-items: baseline;
-        justify-content: end;
-        width: 2rem;
-        height: 16px;
-        float: right;
-    }
-
-    .dropdown {
-        position: relative;
-        // width: 2rem;
-        // height: 16px;
-    }
-
-    .material-symbols-outlined {
-        font-size: inherit;
-        cursor: pointer;
-        padding: 0;
-    }
-
-    .dropdown-menu {
-        position: absolute;
-        left: 0;
-        top: calc(100% + .25rem);
-        width: 7rem;
-        background-color: grey;
-        padding: .75rem;
-        border-radius: .25rem;
-        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .1);
-        opacity: 0;
-        pointer-events: auto;
-        transform: translate(-6rem);
-        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-    }
-
-    .dropdown.active>.material-symbols-outlined+.dropdown-menu {
-        opacity: 1;
-        transform: translateY(-5, -5);
-        pointer-events: auto;
-    }
-
-    span.changeableContent:hover {
-        cursor: pointer;
-    }
-
-    span.changeableContent:active {
-        color: white;
-        cursor: pointer;
-    }
-
-    h4 {
-        border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
-        padding: 0 0 1rem;
-        margin-bottom: 1rem;
-    }
-
-    #textContent {
-        font-size: small;
-        border-bottom: 0.1rem solid var(--main_border, rgba(255, 255, 255, 0.2));
-        padding: 0 0 1rem;
-        margin-bottom: 1rem;
-    }
-
-    p {
-        padding: 0 0 1rem;
-    }
-
 }

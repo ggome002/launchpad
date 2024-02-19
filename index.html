@@ -314,110 +314,267 @@
             <a class="link_chevron" target="_blank" href="#">
                 <h1>Calendar</h1>
             </a>
-            <br>
-            <span id="subheader">View upcoming academic events</span>
-            <div id="header">
-                <div class="dropdown" data-dropdown>      
-                    <button class="material-symbols-outlined" data-dropdown-button>menu</button>                        
-                    <div class="dropdown-menu">
-                        <span class="changeableContent" id="campuslifeDropdown">Campus Life</span>
-                        <span class="changeableContent" id="artsDropdown">Arts</span>
-                        <span class="changeableContent" id="academicsDropdown">Academics</span>
-                        <span class="changeableContent" id="athleticsDropdown">Athletics</span>
-                        <span class="changeableContent" id="recreationDropdown">Recreation</span>
-                        <span class="changeableContent" id="communityDropdown">Community</span>
-                    </div>
+            <span>View upcoming academic events</span>
+                <span onclick="myFunction()" class = "dropbtn" data-icon="menu">Sections</span>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <span class="changeableContent" id="campuslifeDropdown">Campus Life</span>
+                    <span class="changeableContent" id="artsDropdown">Arts</span>
+                    <span class="changeableContent" id="academicsDropdown">Academics</span>
+                    <span class="changeableContent" id="athleticsDropdown">Athletics</span>
+                    <span class="changeableContent" id="recreationDropdown">Recreation</span>
+                    <span class="changeableContent" id="communityDropdown">Community</span>
                 </div>
-            </div>
             <div class="card">
                 <div class = "show calSection campuslifeDropdown">
                     <h4>Campus Life</h4>
                     <div>
-                        <h5>Subtitle1</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>Harvest of Hope Food Drive</h5>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod quaerat illo ratione sit corporis laborum officia, quis cumque ducimus perferendis culpa earum dicta eveniet nihil est. Quia laboriosam laborum voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aspernatur provident minus alias magni adipisci. Necessitatibus reiciendis laborum illo? Iusto ipsa distinctio sed reprehenderit non earum eligendi consequuntur et laudantium?</p>
+                        <a class = "readmore" href = "https://calendar.fiu.edu/event/fiu_multi-faith_council_meeting_2023">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>2/16 6pm</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>Panther Plaza (BBC)</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>Campus Life</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle2</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>BSU Blackout</h5>
+                        <p>BSU Blackout is BSU's annual photo-op event where students, faculty, and staff alike stand in together to break stereotypes and empower each other. Come out...</p>
+                        <a class = "readmore" href = "https://calendar.fiu.edu/event/fiu_multi-faith_council_meeting_2023">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>2/16 8:50pm</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>WPAC - Wertheim Performing Arts Center, Main Stage Theatre</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>College of Communication Architecture + The Arts</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle3</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>Parent and Family Mini Series: Fostering Student Success and Academic Support</h5>
+                        <p>Join Orientation and Family Programs along with the Center for Academic Success for our virtual Parent and Family Mini-Series. During this session, we will...</p>
+                        <a class = "readmore" href = "https://calendar.fiu.edu/event/fiu_multi-faith_council_meeting_2023">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>2/17 1:30pm</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>OBCC - Ocean Bank Convocation Center</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>Orientation & Family Programs</a>
+                        </div>
                     </div>  
                 </div>
                 <div class = "calSection artsDropdown">
                     <h4>Arts</h4>
                     <div>
-                        <h5>Subtitle1</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>Divergence Exhibition</h5>
+                        <p>To celebrate Black History Month, stop by the Washington Gallery to see Divergence by FIU Alum Yves Gabriel,'17. Gabriel utilizes painting as a lens to...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>MMC</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>Computer Science</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle2</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>Living With Water Exhibition</h5>
+                        <p>Stop by FIU CARTA | Mana Wynwood to witness the creative exploration of bodies of water through the lens of Simone Stark's Tropical Landscapes students in...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>FIU CARTA | Mana Wynwood, Central Space</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>FIU CARTA Mana Wynwood</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle3</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>War, after the War: The Art of American GIs in the Philippines During World War II</h5>
+                        <p>On loan from the Albay Arts Foundation: War, after the War, gathers works of art by American soldiers posted in the Philippines and the Pacific theater...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>9am</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>Glenn Gallery, Glenn Hubert Library, Biscayne Bay Campus, First & Second Floors</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>Libraries</a>
+                        </div>
                     </div>
                 </div>
                 <div class = "calSection academicsDropdown">
                     <h4>Academics</h4>
                     <div>
-                        <h5>Subtitle1</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>Parent Club | Parenting Teens: Survival Tips (Free Webinar - English)</h5>
+                        <p>In this workshop, parents are introduced to the five core tips for parenting teens with confidence and success. CLICK ON A DATE TO REGISTER Feb 5 | 11...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>11am</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>Center for Children and Families</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle2</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>Simple Syllabus: Essentials (In Person)</h5>
+                        <p>Come join us to learn more about Simple Syllabus and how it makes the creation of syllabi convenient and efficient for instructors! Templates with fields...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>2pm</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>MMC - Modesto A. Maidique Campus, GL 158</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>Division of Information Technology</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle3</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>The Exile Studies Program Presents:" We're not Nostalgia Junkies, We're Futurists: A New...</h5>
+                        <p>This Event has been postponed until further. The Exiles Studies Program, in collaboration with The Betsy-South Beach Hotel. The Betsy-FIU Exile Studies...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>6:45pm</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>GC - Graham University Center, 243</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>Department of English</a>
+                        </div>
                     </div>
                 </div>
                 <div class = "calSection athleticsDropdown">
                     <h4>Athletics</h4>
                     <div>
-                        <h5>Subtitle1</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>FIU Men's Soccer at Virginia - Round of 32</h5>
+                        <p>11/19/2023</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>N/A</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle2</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>FIU Men's Soccer vs Mercer - First Round</h5>
+                        <p>11/16/2023</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>N/A</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle3</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>FIU Men's Soccer vs Florida Atlantic - First Round</h5>
+                        <p>11/11/2023</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>N/A</a>
+                        </div>
                     </div>
                 </div>
                 <div class = "calSection recreationDropdown">
                     <h4>Recreation</h4>
                     <div>
-                        <h5>Subtitle1</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>FIU Miami International GuitART Festival 2024: Marco Battaglia in Concert</h5>
+                        <p>The 2024 Miami International GuitART Festival presents the 19th century music specialist and virtuoso guitarist Marco Batttaglia in a solo concert,...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>7:30pm</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>WPAC - Wertheim Performing Arts Center, Concert Hall</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>College of Communication Architecture + The Arts</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle2</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>Generic Information Session Via ZOOM</h5>
+                        <p>A Bachelor of Science in Nursing (BSN) degree is the foundation for every nursing professional and the catalyst to progress your career from caregiver to...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>08:00PM</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>MMC</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>Computer Science</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle3</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>XXVII New Music Miami ISCM Festival: An Evening of Cello, Piano, & Electronics</h5>
+                        <p>Enjoy an evening of cutting-edge music for cello, piano, and electronics by some of FIU’s finest faculty artists including cellist Jason...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>7pm</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>WLF - The Wolfsonian</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>College of Communication Architecture + The Arts</a>
+                        </div>
                     </div>
                 </div>
                 <div class = "calSection communityDropdown">
                     <h4>Community</h4>
                     <div>
-                        <h5>Subtitle1</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>Parent Club | Raising Resilient Children (Free Webinar - English)</h5>
+                        <p>In this workshop, parents are introduced to six core building blocks for children to manage their feelings and become resilient in dealing with life stress....</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>6pm</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>Center for Children and Families</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle2</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>TTR: Connect, Care, Conserve: How Zoo Miami Creates Community Impact</h5>
+                        <p>Tuesday Times Roundtable TTR is FIU’s weekly series of moderated conversations around current global issues and trends. Conversations bring into play the...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>12:30pm</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>GC - Graham University Center, GC 150</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>Global Learning Initiatives</a>
+                        </div>
                     </div>
                     <div>
-                        <h5>Subtitle3</h5>
-                        <p>A campus initiative combating food poverty among our peers. This initiative is meant to ensure that there is a supportive environment where no student faces...</p>
+                        <h5>Hacker Nation</h5>
+                        <p>Intellectually dynamic learning community that meets every Wednesday to discuss future-facing topics such as: TECH - AI - INNOVATION - RESEARCH -...</p>
+                        <a class = "readmore">Read More</a>
+                        <div class = "extra-information">
+                            <span class = "material-symbols-outlined schedule">schedule</span>
+                            <a>12pm</a>
+                            <span class = "material-symbols-outlined location">location_on</span>
+                            <a>N/A</a>
+                            <span class = "material-symbols-outlined apartment">apartment</span>
+                            <a>StartUP FIU</a>
+                        </div>
                     </div>
                 </div>
             </div>
