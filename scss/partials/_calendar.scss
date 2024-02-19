@@ -93,7 +93,7 @@ section.calendar {
             position: absolute;
             margin-top: 0.35rem;
         }
-        a.readmore:visited {
+        a.readmore:visited, a.readmore:link, a.readmore:active, a.readmore:hover {
             color: #f1f1f1;
         }
 

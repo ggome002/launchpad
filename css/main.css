@@ -720,7 +720,7 @@ html body main section.calendar div.card a.readmore {
   position: absolute;
   margin-top: 0.35rem;
 }
-html body main section.calendar div.card a.readmore:visited {
+html body main section.calendar div.card a.readmore:visited, html body main section.calendar div.card a.readmore:link, html body main section.calendar div.card a.readmore:active, html body main section.calendar div.card a.readmore:hover {
   color: #f1f1f1;
 }
 html body main section.calendar div.card div h5 {
