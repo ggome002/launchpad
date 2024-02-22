@@ -9,29 +9,43 @@ arr.each(function (elem) {
 $('div[filter] span').click(function (e) {
     $('div[filter] span').removeAttr('active');
     $(this).attr('active', '');
-})
+    const selectedFilter = $(this).text();
+    filter(selectedFilter.toString());
+    // console.log(selectedFilter.toString());
+  })
 
 $(".changeableContent").click(function(){
     $(".calSection").removeClass("show");
     $("."+$(this).attr("id")).addClass("show");
 })
 
+function search() {
+  console.log("hello");
+}
 
-// document.addEventListener("click", e => {
-//     const isDropdownButton = e.target.matches("[data-dropdown-button]")
-//     if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
 
-//     let currentDropdown
-//     if (isDropdownButton) {
-//         currentDropdown = e.target.closest("[data-dropdown]")
-//         currentDropdown.classList.toggle("active")
-//     }
 
-//     document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
-//         if (dropdown === currentDropdown) return
-//         dropdown.classList.remove("active")
-//     })
-// })
+function filter(selectedFilter) {
+    // console.log(filter);
+    // list = $("article div.list span["+selectedFilter+"]");
+    divList = $("article div.list div");
+    spanList = $("article div.list div span");
+    // console.log(divList);
+    $("article div.list span").addClass('hide');
+    // $("article div.list div").addClass('hide');
+    $("article div.list span["+selectedFilter+"]").removeClass('hide');
+    if(selectedFilter == "All") {
+      $("article div.list span").removeClass('hide');
+    };
+
+    $(divList).each(function() {
+      $(this).addClass('hide');
+      if ($(this).children(':not(.hide)').length > 0) {
+        // console.log ("no hide");
+        $(this).removeClass('hide');
+      };
+    });
+}
 
 function myFunction() {
     document.getElementById("dropdown-menu").classList.toggle("show");

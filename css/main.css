@@ -1050,20 +1050,35 @@ html body main section.catalog div.card header div[filter] span[data-icon][activ
 }
 html body main section.catalog div.card article div.list {
   overflow-y: scroll;
-  max-height: 300px;
+  max-height: 450px;
 }
-html body main section.catalog div.card article div.list span {
+html body main section.catalog div.card article div.list div {
+  position: relative;
+}
+html body main section.catalog div.card article div.list div.hide {
+  display: none;
+}
+html body main section.catalog div.card article div.list div::before {
+  content: attr(data-label);
+  position: sticky;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 5px 20px;
+  padding-left: 10px;
+  background: gray;
+}
+html body main section.catalog div.card article div.list div span {
   margin: 10px 0;
   padding: 5px 20px;
 }
-html body main section.catalog div.card article div.list span:first-of-type {
-  margin-top: 0;
+html body main section.catalog div.card article div.list div span.hide {
+  display: none;
 }
-html body main section.catalog div.card article div.list span.heading {
-  padding-left: 10px;
-  background: var(--main_border, rgba(255, 255, 255, 0.6));
-  position: sticky;
-  top: 0px;
+html body main section.catalog div.card article div.list div span:first-of-type {
+  margin-top: 20px;
 }
 html body main section.catalog div.card article div[filter] span {
   font-size: 0.6rem;
