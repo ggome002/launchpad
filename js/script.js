@@ -12,6 +12,10 @@ $('div[filter] span').click(function (e) {
     const selectedFilter = $(this).text();
     filter(selectedFilter.toString());
     // console.log(selectedFilter.toString());
+
+    list =  $('article div.list div span:not(.hide)');
+    search($('#catalog_search').val().toLowerCase(), list);
+
   })
 
 $(".changeableContent").click(function(){
@@ -20,52 +24,65 @@ $(".changeableContent").click(function(){
 })
 
 divList = $("article div.list div");
-// spanList = $("article div.list div span");
+spanList = $("article div.list div span");
+// var list;
 
-function search() {
-  var searchText = $('#catalog_search').val().toLowerCase();
-  // console.log(searchText);
-  $(divList).each(function(){
-    var hasMatches = false;
-    // console.log($(this).children());
-    $(this).children().each(function() {
-      var text = $(this).text().toLowerCase();
+$('#catalog_search').on('keyup', function(event) {
+
+  var searchText = this.value.toLowerCase();
+  if (event.which === 13) {
+    event.preventDefault();
+  };
+
+  if (event.which == 8) {
+    // console.log("backspace");
+  
+    if($('div[filter] span[active]').text() == "All" || $('div[filter] span[active]').text() == "") {
+      list = $('article div.list div span');
+      $('article div.list div span').removeClass('hide');
+      $("article div.list div").removeClass('hide');
+    }else{
+      filter($('div[filter] span[active]').text());
+      list =  $('article div.list div span:not(.hide)');
+    }
+
+  } else {
+    list =  $('article div.list div span:not(.hide)');
+  }
+
+  search(searchText, list);
+})
+
+//add a check for each filter and maybe switch case?
+//if i only check off whats visible how do i bring it bACK
+
+function search(searchText, list) {
+  list.each(function() {
+     var text = $(this).text().toLowerCase();
       // console.log(text);
-      if (text.includes(searchText)) {
-        $(this).removeClass("hide");
-        hasMatches = true;
-      } else {
+      if (! text.includes(searchText)) {
         $(this).addClass("hide");
       }
-    });
-    if (hasMatches) {
-      $(this).removeClass("hide");
-    } else {
-      $(this).addClass("hide");
-    }
+
   })
+  checkHeaders()
+}
+
+function checkHeaders(){
+  $('article div.list div:not(:has(span:not(.hide))').addClass("hide")
 }
 
 function filter(selectedFilter) {
-    // console.log(filter);
-    // list = $("article div.list span["+selectedFilter+"]");
-    // divList = $("article div.list div");
-    // spanList = $("article div.list div span");
-    // console.log(divList);
-    $("article div.list span").addClass('hide');
-    // $("article div.list div").addClass('hide');
-    $("article div.list span["+selectedFilter+"]").removeClass('hide');
+
+    $("article div.list div").removeClass('hide');
+    $("article div.list div span").removeClass('hide');
     if(selectedFilter == "All") {
       $("article div.list span").removeClass('hide');
-    };
+    }else{
+      $('article div.list div').children(':not(['+selectedFilter+'])').addClass('hide')
+      checkHeaders()
+    }
 
-    $(divList).each(function() {
-      $(this).addClass('hide');
-      if ($(this).children(':not(.hide)').length > 0) {
-        // console.log ("no hide");
-        $(this).removeClass('hide');
-      };
-    });
 }
 
 function dropdownFunction() {
